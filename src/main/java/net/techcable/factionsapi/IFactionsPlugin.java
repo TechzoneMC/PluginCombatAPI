@@ -22,6 +22,8 @@
  */
 package net.techcable.factionsapi;
 
+import net.techcable.factionsapi.flags.FactionSettings;
+import net.techcable.factionsapi.flags.ICustomFlag;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
@@ -129,4 +131,30 @@ public interface IFactionsPlugin {
      * @return the wilderness faction
      */
     public IFaction getNone();
+
+    /**
+     * Create a custom flag with the specified name
+     *
+     * <p>
+     * If the flag with the specified name already exists
+     * </p>
+     *
+     * @param name the name of the flag to create
+     * @throws java.lang.UnsupportedOperationException if the implementation doesn't support custom flags
+     * @return the custom flag
+     */
+    public ICustomFlag getOrCreateCustomFlag(String name);
+
+    /**
+     * Create a custom flag with the specified name
+     *
+     * <p>
+     * If the flag with the specified name doesn't exist, reutnrs null
+     * </p>
+     *
+     * @param name the name of the flag to get
+     * @throws java.lang.UnsupportedOperationException if the implementation doesn't support custom flags
+     * @return the custom flag, or null if it doesn't exist
+     */
+    public ICustomFlag getCustomFlag(String name);
 }

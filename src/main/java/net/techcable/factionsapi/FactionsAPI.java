@@ -26,6 +26,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.techcable.factionsapi.flags.ICustomFlag;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
@@ -155,5 +156,20 @@ public class FactionsAPI {
      */
     public static IFaction getFactionByTag(String tag) {
         return getImplemenetation().getFactionByTag(tag);
+    }
+
+    /**
+     * Create a custom flag with the specified name
+     *
+     * <p>
+     * If the flag with the specified name already exists
+     * </p>
+     *
+     * @param name the name of the flag to create
+     * @throws UnsupportedOperationException if the implementation doesn't support custom flags
+     * @return the custom flag
+     */
+    public static ICustomFlag createCustomFlag(String name) {
+        return getImplemenetation().getOrCreateCustomFlag(name);
     }
 }

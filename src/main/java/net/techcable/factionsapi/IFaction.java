@@ -139,4 +139,49 @@ public interface IFaction {
      * @retun this faction's relation to the other faction
      */
     public Relation getRelation(IFaction other);
+
+    /**
+     * Get this faction's relation to the specified player.
+     *
+     * @param other the player to get this factions relation to
+     * @retun this faction's relation to the given player
+     */
+    public Relation getRelation(IFPlayer other);
+
+    /**
+     * Whether this faction is considered 'offline'
+     * <p>
+     * Useful for {@link net.techcable.factionsapi.flags.FactionSettings#isOfflineExplosions()}
+     * </p>
+     *
+     * @return if the faction is offline
+     */
+    public boolean isOffline();
+
+    /**
+     * Get the faction's power
+     *
+     * <p>
+     * Power allows factions to claim land
+     * Power is lost on death unless {@link net.techcable.factionsapi.flags.FactionSettings#isPermanent()} is false
+     * </p>
+     *
+     * @return the faction's power
+     */
+    public int getPower();
+
+    /**
+     * Get the amount of money the faction has
+     *
+     *
+     * @return the amount of money the faction has
+     */
+    public double getBalance();
+
+    /**
+     * Set the amount of money the faction has
+     *
+     * @param balance the new faction balance
+     */
+    public void setBalance(double balance);
 }

@@ -22,14 +22,16 @@
  */
 package net.techcable.factionsapi.flags;
 
+import net.techcable.factionsapi.IFaction;
+
 /**
- * Represents a 'flag', which is an named editable boolean for a faction
+ * Represents a custom faction setting, which is an named editable boolean for a faction
  * <p>
- * All implementations are guaranteed to support the default flags, but custom flags may or may not be supported
- * NOTE: The implementations don't really support
+ * Many implementations don't support faction flags
+ * For those that do, a new flag can be created via {@link FactionsAPI}
  * </p>
  */
-public interface IFlag {
+public interface ICustomFlag {
     /**
      * Get the name of the flag
      *
@@ -38,9 +40,19 @@ public interface IFlag {
     public String getName();
 
     /**
-     * Get the value of this flag
+     * Get the value of this flag for the specified faction
+     *
+     * @param f the faction to get the value in
      *
      * @return the value of this flag
      */
-    public String getValue();
+    public boolean getValue(IFaction f);
+
+    /**
+     * Sets the value of the flag in the specified faction to the specified value
+     *
+     * @param f the faction the faction to set for
+     * @param value the value of the flag in the given faction
+     */
+    public void setValue(IFaction f, boolean value);
 }
