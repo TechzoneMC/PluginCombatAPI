@@ -21,4 +21,7 @@
             <url>http://repo.techcable.net/content/groups/public/</url>
         </repository>
     </repositories>
+    <build>
+        <finalName>FactionsAPI</finalName>
+    </build>
 </project>
