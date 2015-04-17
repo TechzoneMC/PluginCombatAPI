@@ -22,6 +22,8 @@
  */
 package net.techcable.factionsapi;
 
+import net.techcable.factionsapi.flags.FactionSettings;
+
 import com.google.common.collect.ImmutableCollection;
 
 /**
@@ -168,7 +170,7 @@ public interface IFaction {
      *
      * @return the faction's power
      */
-    public int getPower();
+    public double getPower();
 
     /**
      * Get the amount of money the faction has
@@ -184,4 +186,14 @@ public interface IFaction {
      * @param balance the new faction balance
      */
     public void setBalance(double balance);
+    
+    /**
+     * Get the faction's settings
+     * <p>
+     * A faction's settings controls prefrences such as open, whether monsters can spawn, etc...
+     * </p>
+     * 
+     * @return the faction's settings
+     */
+    public FactionSettings getSettings();
 }
